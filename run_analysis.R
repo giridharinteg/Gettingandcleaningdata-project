@@ -72,6 +72,6 @@ temp_dataset <- select(activity_named_data,-activityname);
 grouped_dataset <- group_by(temp_dataset,activityid,subjectid);
 final_data <- summarise_each(grouped_dataset,funs(mean));
 final_data <- merge(final_data, activity_labels, by = "activityid", all.x = TRUE);
-write.table(final_data, './tidyData.txt',row.names=TRUE,sep='\t');
+write.table(final_data, './tidyData.txt',row.names=FALSE,sep='\t');
 
 
